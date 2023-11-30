@@ -34,13 +34,7 @@ body, html {
     height: 100vh;
 }
 
-@media screen and (max-width:478px) {
-  .liens  {
-    display: flex;
-    flex-direction: column;
-  
-  }
-}
+
 /* counter card styling*/
 .counter-card {
   margin-top: 5vh;
