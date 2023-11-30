@@ -58,6 +58,11 @@ body, html {
     box-shadow: 0 0 5px fuchsia;
     border-radius: 5px;
   }
+  .api {
+    max-height: 70vh;
+    width: 100% !important;
+    overflow: scroll;
+  }
 }
 /* counter card styling*/
 .counter-card {
