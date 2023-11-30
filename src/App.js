@@ -22,9 +22,6 @@ function App() {
         <Route path="/counter">
         <Counter/>
         </Route>
-        <Route path="https://hamid-tlailia.github.io">
-        <Home/>
-        </Route>
       </Switch>
     </div>
   </Router>
