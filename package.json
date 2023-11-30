@@ -1,6 +1,4 @@
-{
-  "homepage": "https://hamid-tlailia.github.io/counter",
-  "name": "learnreact",
+{  "name": "learnreact",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
