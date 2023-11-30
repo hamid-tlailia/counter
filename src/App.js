@@ -22,7 +22,7 @@ function App() {
         <Route path="/counter">
         <Counter/>
         </Route>
-        <Route path="/test_params">
+        <Route path="/:test_params">
         <Home/>
         </Route>
       </Switch>
