@@ -39,6 +39,7 @@ body, html {
     display: flex;
     flex-direction: column;
   justify-content: space-around;
+  display: none;
   }
 
   .lien.active , .lien:hover {
@@ -75,4 +76,71 @@ margin-bottom: 7px;
 .api {
   max-height: 70vh;
   overflow: scroll;
+}
+
+.show-when-mobile{
+  display: none;
+}
+/*show when mobile*/
+
+@media screen and (max-width:478px)  {
+  .show-when-mobile{
+    position: relative;
+    display: block;
+  }
+  
+  .show-when-mobile .hidden {
+    position: absolute;
+    width: 18vh;
+    height: 25vh;
+    background-color: aliceblue;
+    padding: 7px;
+    opacity: 0;
+    border-radius: 50px;
+  }
+  .show-when-mobile .visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 20vh;
+    height: max-content;
+    padding: 5px;
+    background-color: black;
+    padding: 7px;
+    opacity: 1;
+    z-index: 5;
+    border-radius: 15px;
+    transition: .5s;
+    right: -10px;
+    top: 46px;
+  }
+  .show-when-mobile .visible a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    margin-left: 10px;
+    width: 15vh !important;
+    height: 5vh !important;
+    color: cyan;
+    box-shadow: none;
+    text-decoration: underline;
+    font-family: 'Merriweather', serif;
+    border-bottom: 1px solid red;
+    margin-bottom: 8px;
+  }
+  
+  .visible a.active , .visible a:hover {
+    color: fuchsia;
+    box-shadow: 0 0 5px fuchsia;
+    border-radius: 5px;
+  }
+  .check {
+    color: skyblue;
+    cursor: pointer;
+  
+  }
 }
