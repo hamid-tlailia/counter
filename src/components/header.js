@@ -6,7 +6,7 @@ const Header = () => {
     
     <div>
   
-      <div className=" d-flex  flex-row justify-content-between w-100 bg-dark p-3 align-items-center w-100">
+      <div className=" d-flex  flex-row justify-content-around w-100 bg-dark p-3 align-items-center w-100">
 <div className="logo">
   <NavLink to="/"><h2 className='text-warning'>Redux-Toolkit</h2></NavLink>
 </div>

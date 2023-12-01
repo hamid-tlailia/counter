@@ -38,14 +38,13 @@ body, html {
   .liens  {
     display: flex;
     flex-direction: row;
-  
+  justify-content: space-around;
   }
   .liens .lien {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    margin-left: 3px;
+    font-size: 18px;
     width: 13vh !important;
     height: 5vh !important;
     color: cyan;
