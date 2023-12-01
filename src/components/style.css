@@ -37,21 +37,10 @@ body, html {
 @media screen and (max-width:478px) {
   .liens  {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   justify-content: space-around;
   }
-  .liens .lien {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    width: auto !important;
-    height: 5vh !important;
-    color: cyan;
-    box-shadow: none;
-    text-decoration: underline;
-    font-family: 'Merriweather', serif;
-  }
+
   .lien.active , .lien:hover {
     color: fuchsia;
     box-shadow: 0 0 5px fuchsia;
