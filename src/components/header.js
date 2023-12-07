@@ -46,6 +46,9 @@ const Header = () => {
             <NavLink to="/counter" className="mobile">
               Counter
             </NavLink>
+            <NavLink to="/products" className="mobile">
+              Products
+            </NavLink>
           </div>
         </div>
         <div className="liens">
@@ -58,6 +61,9 @@ const Header = () => {
           <NavLink to="/counter" className="lien">
             Counter
           </NavLink>
+          <NavLink to="/products" className="lien">
+              Products
+            </NavLink>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import Api from "./components/api";
 import Content from "./components/content";
 import Header from "./components/header";
 import Home from "./components/home";
+import Products from "./components/products";
 import Counter from "./redux/counter";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/counter">
         <Counter/>
+        </Route>
+        <Route path="/products">
+        <Products/>
         </Route>
       </Switch>
     </div>

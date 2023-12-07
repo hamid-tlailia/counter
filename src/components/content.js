@@ -22,9 +22,7 @@ setName({
 e.target.reset();
   };
   return (
-    
     <div className='d-flex  flex-column justify-content-center w-100 p-3 align-items-center'>
-      
       <h2 id='result'> My name is : {name.name}  <span> {name.title} </span> </h2>
   <div className="card w-75">
   <form onSubmit={handleSubmit} className='p-3'>
