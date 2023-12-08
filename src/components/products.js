@@ -1,8 +1,29 @@
-import React from 'react';
-
+import './style.css'
 const Products = () => {
+  let input = ''
+  function handleUpload(e){
+    let area =document.getElementById('area')
+     input = e.target.files;
+     const array = Array.from(input);
+ for(let i=0 ; i<array.length ; i++) {
+  area.innerHTML += `<div>
+  <span id="close" index="${[i]}">X</span>
+  <img src=${URL.createObjectURL(array[i])} alt="product_image" width="120" height="120"/> 
+  </div>`
+ }
+ let closes = document.querySelectorAll('#close');
+ closes.forEach(close => close.addEventListener('click' , (e) => {
+  let index = e.target.getAttribute('index')
+   array.splice(index,1);
+   e.target.parentElement.remove()
+  
+}));
+  }
+
+
   return (
     <div>
+    
 <div className="card p-3 m-3 rounded-2">
   <div className="card-header p-2 text-center text-warning"><h4>Welcome to admin panel</h4></div>
   <div className="card-body p-2">
@@ -23,7 +44,7 @@ const Products = () => {
   </div>
 
   <div class="input-group mb-3">
-  <input type="file" class="form-control" id="inputGroupFile02" multiple/>
+  <input type="file" class="form-control" id="inputGroupFile02" onChange={handleUpload} multiple/>
   <label class="input-group-text" for="inputGroupFile02">Upload</label>
 </div>
 
@@ -33,15 +54,15 @@ const Products = () => {
   </div>
 
 
-  <button data-mdb-ripple-init type="button" class="btn btn-success mb-4">Publish</button>
+  <button data-mdb-ripple-init type="button" class="btn btn-success mb-4" >Publish</button>
 
 </form>
   </div>
   <div className="card-footer p-2">
     <p className="fs-4 text-black-50 text-decoration-underline">All products</p>
     <hr />
-    <div className="row">
-      <p className="text dark">No products yet.</p>
+    <div className="d-flex flex-row area" id='area'>
+
     </div>
   </div>
 </div>
