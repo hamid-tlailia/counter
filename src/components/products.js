@@ -7,32 +7,30 @@ const Products = () => {
   pdesc : "",
   pImage : ""
   })
-  let input = "";
-  function handleUpload(e) {
-    let area = document.getElementById("area");
-    input = e.target.files;
-     const array = Array.from(input);
-    for (let i = 0; i < array.length; i++) {
-      area.innerHTML += `<div>
-  <span id="close" index="${[i]}">X</span>
-  <img src=${URL.createObjectURL(
-    array[i]
-  )} alt="product_image" width="100%" height="150"/> 
-  </div>`;
-    }
-    let closes = document.querySelectorAll("#close");
-    closes.forEach((close) =>
-      close.addEventListener("click", (event) => {
-        let index = event.target.getAttribute("index");
-        array.splice(index, 1);
-        event.target.parentElement.remove();
-      })
-    );
-    // e.target.value = null;
-    console.log(product)
-  }
-
-
+  // let input = "";
+  // function handleUpload(e) {
+  //   let area = document.getElementById("area");
+  //   input = e.target.files;
+  //    const array = Array.from(input);
+  //   for (let i = 0; i < array.length; i++) {
+  //     area.innerHTML += `<div>
+  // <span id="close" index="${[i]}">X</span>
+  // <img src=${URL.createObjectURL(
+  //   array[i]
+  // )} alt="product_image" width="100%" height="150"/> 
+  // </div>`;
+  //   }
+  //   let closes = document.querySelectorAll("#close");
+  //   closes.forEach((close) =>
+  //     close.addEventListener("click", (event) => {
+  //       let index = event.target.getAttribute("index");
+  //       array.splice(index, 1);
+  //       event.target.parentElement.remove();
+  //     })
+  //   );
+  //   // e.target.value = null;
+  //   console.log(product)
+  // }
 
   const handleProductState = (e) => {
 e.preventDefault()
@@ -47,10 +45,10 @@ setProduct ({
   pdesc : p_desc,
   pImage : myImages
 })
-console.log(p_image)
-
   }
-
+const imageModal = () => {
+  console.log(product.pImage)
+}
   return (
     <div>
       <div className="card p-3 m-3 rounded-2">
@@ -134,14 +132,20 @@ console.log(p_image)
         product.pName !== ""  ?     <div className="d-flex flex-column product" >
         <div className="product_images">
         {
-            product.pImage.map(mag => 
-              <img src={URL.createObjectURL(mag)} alt="product_image" width="150" height="150"/> 
-              )
+            
+              <img src={URL.createObjectURL(product.pImage[0])} onClick={imageModal} alt="product_image" width="100%" height="150"/> 
+              
           }
         </div>
-        <span> {product.pName}</span>
-        <span> {product.pPrice} £</span>
-        <span> {product.pdesc}</span>
+        <div className=" card d-flex flex-column product_infos justify-content-center align-items-center">
+        <span className="text-warning fw-bold"> {product.pName}</span>
+        <span className="text-danger"> {product.pPrice} £</span>
+        <span> {product.pdesc}</span> 
+        <div className="d-flex flex-row justify-content-around align-items-center w-100 card-footer">
+          <button className="btn btn-success"><i class="fas fa-cart-arrow-down"></i></button>
+          <button className="btn btn-warning"><i class="fas fa-eye"></i></button>
+        </div>
+        </div>
       </div> : <span>No product yet</span>
       }
         </div>
