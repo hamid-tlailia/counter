@@ -86,7 +86,7 @@ const imageModal = () => {
                 type="file"
                 class="form-control"
                 id="pimage"
-                onChange={handleUpload}
+                // onChange={handleUpload}
                 multiple
                 
               />
